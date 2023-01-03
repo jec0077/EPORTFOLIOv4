@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block title %}Career & Leadership{% endblock %}
+
+{% block content %}
+	<div class="container px-4 py-4 pt-36 mx-auto flex flex-col text-center w-full mb-20">
+		<h2 class="text-3xl text-indigo-500 tracking-widest font-medium title-font mb-4">CAREER & LEADERSHIP</h2>
+		<p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+	</div>
+	<hr class="my-4 mx-auto w-48 h-1 bg-indigo-500 rounded border-0 md:my-4 dark:bg-indigo-500">
+	{% for exp in exps %}
+		<section class="text-indigo-100 body-font">
+		  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+		    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+		      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-sky-50">{{ exp.name_of_role }}</h1>
+			  <h3 class="sm:text-xl text-lg mb-4 font-medium text-sky-50">{{ exp.company_name }}  |  {{ exp.start_date }} - {{ exp.end_date }}</h3>
+		      <p class="mb-8 leading-relaxed">{{ exp.description }}</p>
+		      <div class="flex justify-center">
+		        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Go to</button>
+		      </div>
+		    </div>
+		    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+		      <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+		    </div>
+		  </div>
+		</section>
+	{% endfor %}
+{% endblock content %}

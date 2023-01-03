@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+	<section class="text-sky-100 body-font relative">
+	  <div class="container px-6 py-12 mx-auto">
+	    <div class="flex flex-col text-center w-full mb-4">
+	    	<div class="container px-4 py-4 pt-4 mx-auto flex flex-col text-center w-full mb-4">
+				<h2 class="text-3xl text-indigo-500 tracking-widest font-medium title-font mb-4">CONTACT ME</h2>
+				<p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+			</div>
+			<hr class="my-4 mx-auto w-48 h-1 bg-indigo-500 rounded border-0 md:my-4 dark:bg-indigo-500">
+	    </div>
+	    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+		<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+	      <div class="flex flex-wrap -m-2">
+	        <div class="p-2 w-1/2">
+	          <div class="relative">
+	            <label for="name" class="leading-7 text-sm text-sky-100">Email</label>
+	            {{ form.message_sender_email }}
+	          </div>
+	        </div>
+	        <div class="p-2 w-1/2">
+	          <div class="relative">
+	            <label for="email" class="leading-7 text-sm text-sky-100">Subject</label>
+	            {{ form.message_subject }}
+	          </div>
+	        </div>
+	        <div class="p-2 w-full">
+	          <div class="relative">
+	            <label for="message" class="leading-7 text-sm text-sky-100">Message</label>
+	            {{ form.message_content}}
+	          </div>
+	        </div>
+	        <div class="p-2 w-full">
+				<button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit">Submit</button>
+	        </div>
+	      </div>
+	    </div>
+		</form>
+	  </div>
+	</section> 
+{% endblock content %}
